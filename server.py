@@ -2,7 +2,7 @@ from flask import Flask, request
 import telebot
 import os
 
-TOKEN = os.environ.get("BOT_TOKEN")
+TOKEN = os.environ.get("BOT_TOKEN")  # Переменная окружения с токеном
 bot = telebot.TeleBot(TOKEN)
 app = Flask(__name__)
 
@@ -16,7 +16,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url="https://ТВОЙ_АДРЕС.onrender.com/" + TOKEN)
+    bot.set_webhook(url="https://dosha-bot-av.onrender.com/" + TOKEN)
     return "Webhook set", 200
 
 if __name__ == "__main__":
