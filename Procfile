@@ -1,1 +1,1 @@
-web: gunicorn server:app -w 1 -k sync -b 0.0.0.0:$PORT
+web: gunicorn server:app
